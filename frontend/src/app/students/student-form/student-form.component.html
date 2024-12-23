@@ -1,0 +1,43 @@
+<div class="shadow border p-4">
+    @if(editStudentId){
+        <h2 class="text-xl font-semibold">Update User</h2>
+    }
+    @else{
+        <h2 class="text-xl font-semibold">Add User</h2>
+    }
+    <form [formGroup]="studentForm">
+        <div class="flex flex-wrap">
+            <mat-form-field class="w-full">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput formControlName="name"/>
+            </mat-form-field>
+            <mat-form-field class="w-full">
+                <mat-label>Email</mat-label>
+                <input type="text" matInput formControlName="email" />
+            </mat-form-field>
+            <mat-form-field class="w-full">
+                <mat-label>Roll Number</mat-label>
+                <input type="number" matInput formControlName="roll" />
+            </mat-form-field>
+            <mat-form-field class="w-full">
+                <mat-label>Mobile Number</mat-label>
+                <input type="number" matInput formControlName="mobile"/>
+            </mat-form-field>
+
+        </div>
+        <div class="flex justify-center">
+            @if(editStudentId){
+                <button mat-raised-button (click) ="updateStudent()">
+                    Update
+                </button>
+            }
+            @else{
+                <button mat-raised-button (click) ="addStudent()">
+                    Add
+                </button>
+            }
+            
+
+        </div>
+    </form>
+</div>
